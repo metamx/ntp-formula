@@ -15,9 +15,7 @@ ntpd_conf:
 
 ntpd:
   service:
-    {% if grains['env'] != 'provision' %}
     - running
-    {% endif %}
     - name: {{ ntp.service }}
     - enable: True
     - require:
