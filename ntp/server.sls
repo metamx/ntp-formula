@@ -25,3 +25,4 @@ ntpd:
     - watch:
       - file: ntpd_conf
 {% endif %}
+{% endif %}
