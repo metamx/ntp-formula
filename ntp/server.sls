@@ -13,13 +13,10 @@ ntpd_conf:
       - pkg: ntp
 {% endif %}
 
+{% if grains['env'] != 'provision' %}
 ntpd:
   service:
-    {% if grains['env'] != 'provision' %}
     - running
-    { % else %}
-    - dead
-    {% endif %}
     - name: {{ ntp.service }}
     - enable: True
     - require:
