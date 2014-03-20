@@ -13,7 +13,7 @@ ntpd_conf:
       - pkg: ntp
 {% endif %}
 
-{% if grains['saltenv'] != 'provision' %}
+{% if grains['env'] != 'provision' %}
 ntpd:
   service:
     - running
